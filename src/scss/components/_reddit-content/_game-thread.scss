@@ -11,7 +11,7 @@
     vertical-align: middle;
     height: 80px;
     width: 80px;
-    background: url("../img/logos-160x160.png");
+    background-image: url("../img/logos-160x160.png");
     background-size: 80px;
   }
 
@@ -30,6 +30,9 @@
   a[href$="#home"] {
     @extend %text-header;
     float: right;
+  }
+  a[href$="#home"]::before{
+	  display: none !important;
   }
   a[href$="#home"]::after{
     @extend %flair-element;
@@ -73,7 +76,7 @@
     float: right;
     padding-right: 10px;
   }
-  
+
   thead,
   hr{
     display: none;
