@@ -47,21 +47,24 @@
 		margin: 0 auto;
 	}
 	// Buttons
-	@import "./components/_reddit-sidebar/_search.scss";
-	@import "./components/_reddit-sidebar/_submit.scss";
-	@import "./components/_reddit-sidebar/_subscribe.scss";
-	@import "./components/_reddit-sidebar/_flair.scss";
-	@import "./components/_reddit-sidebar/_message-mods.scss";
-	@import "./components/_reddit-sidebar/_rules.scss";
+	@import "_reddit-sidebar/search";
+	@import "_reddit-sidebar/submit";
+	@import "_reddit-sidebar/subscribe";
+	@import "_reddit-sidebar/flair";
+	@import "_reddit-sidebar/message-mods";
+	@import "_reddit-sidebar/rules";
+
+	// Ad
+	@import "_reddit-sidebar/premium-ad";
 
 	// Components
-	@import "./components/_reddit-sidebar/_link-info.scss";
-	@import "./components/_reddit-sidebar/_stats.scss";
-	@import "./components/_reddit-sidebar/_mod-tools.scss";
-	@import "./components/_reddit-sidebar/_moderators.scss";
-    @import "./components/_reddit-sidebar/_events.scss";
+	@import "_reddit-sidebar/link-info";
+	@import "_reddit-sidebar/stats";
+	@import "_reddit-sidebar/mod-tools";
+	@import "_reddit-sidebar/moderators";
+    @import "_reddit-sidebar/events";
 
 	// Special stuff
-	@import "./components/_reddit-sidebar/_flair-based-header.scss";
-	@import "./components/_reddit-sidebar/_image.scss";
+	@import "_reddit-sidebar/flair-based-header";
+	@import "_reddit-sidebar/image";
 }
