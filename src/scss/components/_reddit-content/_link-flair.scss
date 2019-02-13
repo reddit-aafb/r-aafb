@@ -26,7 +26,7 @@
 }
 .stickied{
   .title > .title{
-		color: $nfl-red !important;
+		color: $aaf-red !important;
     font-weight: 700 !important;
 	}
 }
@@ -99,7 +99,7 @@
   @extend %flairedTitle;
   @extend %hasIcon;
   .title > .title{
-    color: $nfl-red;
+    color: $aaf-red;
   }
   p.title::before{
     background-position: -25px -75px;
@@ -135,14 +135,14 @@
 .linkflair-serious{
   @extend %flairedTitle;
   a.title{
-    color: $nfl-red;
+    color: $aaf-red;
   }
 }
 // Look Here
 .linkflair-generic{
   @extend %flairedTitle;
 	.title > .title{
-    color: $nfl-100;
+    color: $aaf-100;
   }
 }
 

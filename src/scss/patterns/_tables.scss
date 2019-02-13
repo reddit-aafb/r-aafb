@@ -4,7 +4,7 @@
 		margin: 20px 0;
 	}
 	thead{
-		color: color(grey,100);
+		color: color(black);
 		background: color(grey,20);
 	}
 	thead th{
@@ -13,7 +13,7 @@
 	}
 	tbody{}
 	tbody tr{
-		background: color(grey,0);
+		background: color(white);
 		color: color(grey,80);
 	}
 	tbody tr:nth-child(2n+2){
@@ -23,7 +23,7 @@
 		border: 1px solid color(grey,10);
 	}
 	tbody tr:hover td{
-		color: color(grey,100);
+		color: color(black);
 		background: color(grey,20);
 	}
 }

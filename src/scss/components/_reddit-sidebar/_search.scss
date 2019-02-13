@@ -9,7 +9,7 @@
 	width: 100%;
 	padding: 0 20px;
 	border: 0;
-	background: color(grey,0);
+	background: color(white);
 	outline: none;
 }
 #search input:nth-child(1)::-webkit-input-placeholder{color: color(grey,40); transition: color .3s ease-out;}
@@ -18,12 +18,12 @@
 #search input:nth-child(1):-ms-input-placeholder{color: color(grey,40); transition: color .3s ease-out;}
 #search input:nth-child(1):hover,
 #search input:nth-child(1):focus{
-	background: color(grey,0);
+	background: color(white);
 }
-#search input:nth-child(1):hover::-webkit-input-placeholder{color: color(grey,100);}
-#search input:nth-child(1):hover:-moz-placeholder{color: color(grey,100);}
-#search input:nth-child(1):hover::-moz-placeholder{color: color(grey,100);}
-#search input:nth-child(1):hover:-ms-input-placeholder{color: color(grey,100);}
+#search input:nth-child(1):hover::-webkit-input-placeholder{color: color(black);}
+#search input:nth-child(1):hover:-moz-placeholder{color: color(black);}
+#search input:nth-child(1):hover::-moz-placeholder{color: color(black);}
+#search input:nth-child(1):hover:-ms-input-placeholder{color: color(black);}
 #search input:nth-child(2){
 	@include center(v);
 	position: absolute;

@@ -40,12 +40,12 @@
 	letter-spacing: .02em;
 	line-height: 30px;
 	text-transform: capitalize;
-	background-color: color(grey,0);
+	background-color: color(white);
 	color: color(grey,40);
 	outline: none;
 }
 %sidebar-button-text:hover,
 %sidebar-button-text:focus{
 	background-color: #fff;
-	color: color(grey,100);
+	color: color(black);
 }

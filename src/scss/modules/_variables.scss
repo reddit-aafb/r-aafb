@@ -1,12 +1,10 @@
 // Color
 $black: #111;
 $grey: #555;
-$nfl-blue: #1B487B;
-$nfl-red: #AA2E3A;
-$nfl-0: #FFF;
-$nfl-100: #4D4D55;
-$nfl-draft-gold: #C9A00F;
-$nfl-draft-black: #2F2E32;
+$aaf-blue: #1B487B;
+$aaf-red: #AA2E3A;
+$aaf-0: #FFF;
+$aaf-100: #4D4D55;
 $h-switchboard-height: 0;
 
 // Media Breaks
@@ -22,7 +20,7 @@ $media-stack:
 	(group: custom, id: screen, rule: "only screen ");
 
 // NFL Teams
-$nfl-teams: (name:aafb, abbr:AAFB, url:aafb, fg:$nfl-0, bg:$nfl-blue, eliminated: false, champion: false),
+$aaf-teams: (name:aafb, abbr:AAFB, url:aafb, fg:$aaf-0, bg:$aaf-blue, eliminated: false, champion: false),
 	(name:Hotshots, abbr:ARI, url:ARZHotshots, fg:#FFFFFF, bg:#F7B643, eliminated: false, champion: false),
 	(name:Legends, abbr:ATL, url:ATLLegends, fg:#FFFFFF, bg:#8540AD, eliminated: false, champion: false),
 	(name:Iron, abbr:BIR, url:BHIron, fg:#FFFFFF, bg:#C4C6C8, eliminated: false, champion: false),

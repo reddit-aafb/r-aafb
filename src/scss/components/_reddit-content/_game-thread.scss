@@ -38,7 +38,7 @@
     @extend %flair-element;
   }
   $pos-80: 0px;
-  @each $team in $nfl-teams{
+  @each $team in $aaf-teams{
     $thisName: map-get($team, name);
     $thisAbbr: map-get($team, abbr);
     $thisUrl: map-get($team, url);

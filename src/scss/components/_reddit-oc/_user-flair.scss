@@ -105,7 +105,7 @@ div.comment.noncollapsed > .entry > .tagline > a.author.moderator {
 $pos-20: 0px;
 $pos-32: 0px;
 $pos-100:  0%;
-@each $team in $nfl-teams{
+@each $team in $aaf-teams{
   $thisName: map-get($team, name);
   $thisAbbr: map-get($team, abbr);
   $thisUrl: map-get($team, url);
@@ -185,7 +185,7 @@ $pos-100:  0%;
         background-image: url("../img/nflfilms-80x80.png");
     }
     + .author{
-        color: $nfl-0 !important;
-        background: $nfl-blue;
+        color: $aaf-0 !important;
+        background: $aaf-blue;
     }
 }

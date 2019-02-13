@@ -24,7 +24,7 @@
 
     // Gets background position for all teams for flair, link images, and abbr images.
     $pos-32: 0px;
-    @each $team in $nfl-teams {
+    @each $team in $aaf-teams {
         $thisName: map-get($team, name);
         $thisBg: map-get($team, bg);
         $thisFg: map-get($team, fg);
