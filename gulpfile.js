@@ -30,7 +30,7 @@ var file_paths = {
 		assets: "./src/assets/",
 		css: "./src/scss/",
 		js: "./src/js/",
-		html: "./src/pug/",
+		html: "./src/md/",
 		modules: "./src/modules/"
 	},
 	dist: {
@@ -58,9 +58,9 @@ var file_names = {
 		watch: ['**/*.js', '**/*.json', '**/_*.js']
 	},
 	html: {
-		compile: ['**/*.pug'],
-		ignore: ['**/_*.pug'],
-		watch: ['**/*.pug', '**/_*.pug']
+		compile: ['**/*.md'],
+		ignore: ['**/_*.md'],
+		watch: ['**/*.md', '**/_*.md']
 	}
 }
 

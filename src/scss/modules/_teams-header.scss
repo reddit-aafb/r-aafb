@@ -27,6 +27,7 @@
 		background: $aaf-blue;
 		z-index: 2;
 		cursor: pointer;
+		transition: .3s ease-out;
 	}
 	a::before{
 		transform: skewX(30deg) translateX(-50%);
@@ -35,6 +36,13 @@
 	a::after{
 		transform: skewX(-30deg) translateX(-50%);
 		margin-left: 30px;
+	}
+	a:hover{
+		&::before,
+		&::after{
+			transition: 1s ease-out;
+			background: lighten($aaf-blue, 10);
+		}
 	}
 	&::before{
 		content: "";
