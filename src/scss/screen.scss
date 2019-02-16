@@ -1,14 +1,15 @@
 /* Aurelian by r/nfl */
 
+// theme controller
+@import "controls";
+@import "variables/nfl-teams";
 
 // base theme
-@import "_controls.scss";
-
-// theme controller
 @import "r-aafb-base-theme/theme/index";
 
 // modules
 @import "modules/teams-header";
+@import "modules/nfl-flair";
 
 // states
 @import "states/res";
