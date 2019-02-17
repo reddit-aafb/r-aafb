@@ -5,6 +5,7 @@ var plumber = require('gulp-plumber');
 var fileinclude = require('gulp-file-include');
 var replace = require('gulp-replace');
 var include = require('gulp-file-include');
+var csso = require('gulp-csso');
 
 // assets
 
@@ -123,6 +124,7 @@ gulp.task('build:css', function(){
 				file_paths.src.modules
 			]
 		}))
+		.pipe(csso())
 		.pipe(replace("../img/", "%%"))
 		.pipe(replace(".jpg", "%%"))
 		.pipe(replace(".png", "%%"))
