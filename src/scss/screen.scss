@@ -1,8 +1,11 @@
 /* Aurelian by r/nfl */
 
+// variables
+@import "variables/image-map";
+@import "variables/nfl-teams";
+
 // theme controller
 @import "controls";
-@import "variables/nfl-teams";
 
 // base theme
 @import "r-aafb-base-theme/theme/index";
