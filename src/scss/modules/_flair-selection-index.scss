@@ -1,0 +1,92 @@
+.wiki-page-flair-aaf,
+.wiki-page-flair-aaf-apollos,
+.wiki-page-flair-aaf-hotshots,
+.wiki-page-flair-aaf-legends,
+.wiki-page-flair-aaf-iron,
+.wiki-page-flair-aaf-express,
+.wiki-page-flair-aaf-stallions,
+.wiki-page-flair-aaf-commanders,
+.wiki-page-flair-aaf-fleet,
+.wiki-page-flair-aaf-logo{
+	&{}
+	.toc,
+	.wikititle,
+	.pageactions{
+		display: none;
+	}
+	.wiki-page-content{
+		&{
+			margin: 0;
+		}
+		hr, em, .toggle-source{
+			display: none;
+		}
+	}
+	.wiki{
+		h1{
+			text-align: center;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			font-size: 0;
+			text-align: center;
+		}
+		li{
+			display: inline-block;
+			width: 25%;
+			padding: 20px;
+		}
+		a{
+			$aafb: nth($aaf-teams, 1);
+			@extend %body-copy;
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			color: map-get($aafb, color-1);
+			image-rendering: -webkit-optimize-contrast;
+		}
+		a::before{
+			content: "";
+			background-image: url(../img/logos-160x160.png);
+			background-size: 100%;
+			display: block;
+			width: 100px !important;
+			height: 100px !important;
+			margin: 0 auto;
+			transition: .3s ease;
+			image-rendering: -webkit-optimize-contrast;
+		}
+		a:hover::before{
+			transform: scale(1.05);
+		}
+	}
+
+	// Gets background position for all teams for flair, link images, and abbr images.
+	$pos-100:  0%;
+	@each $team in $aaf-teams{
+		a[href*="#{map-get($team, abbr)}"],
+		a[href*="/r/aafb_dev/wiki/flair/aaf/#{to-lower-case(map-get($team, name))}"]{
+			&{
+				color: map-get($team, color-1);
+			}
+			&::before{
+				background-position: 0 $pos-100;
+			}
+		}
+
+		$pos-100: $pos-100 - 100%;
+	}
+	$pos-100:  0%;
+	@each $team in $nfl-teams{
+		a[href*="#{map-get($team, abbr)}"]{
+			&::before{
+				background-image: url(../img/nfl-logos-160x160.png);
+				background-position: 0 $pos-100;
+			}
+		}
+		$pos-100: $pos-100 - 100%;
+	}
+}
