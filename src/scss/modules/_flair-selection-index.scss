@@ -62,31 +62,31 @@
 		a:hover::before{
 			transform: scale(1.05);
 		}
-	}
 
-	// Gets background position for all teams for flair, link images, and abbr images.
-	$pos-100:  0%;
-	@each $team in $aaf-teams{
-		a[href*="#{map-get($team, abbr)}"],
-		a[href*="/r/aafb_dev/wiki/flair/aaf/#{to-lower-case(map-get($team, name))}"]{
-			&{
-				color: map-get($team, color-1);
+		// Gets background position for all teams for flair, link images, and abbr images.
+		$pos-100:  0%;
+		@each $team in $aaf-teams{
+			a[href*="#{map-get($team, abbr)}"],
+			a[href*="/r/aafb_dev/wiki/flair/aaf/#{to-lower-case(map-get($team, name))}"]{
+				&{
+					color: map-get($team, color-1);
+				}
+				&::before{
+					background-position: 0 $pos-100;
+				}
 			}
-			&::before{
-				background-position: 0 $pos-100;
-			}
-		}
 
-		$pos-100: $pos-100 - 100%;
-	}
-	$pos-100:  0%;
-	@each $team in $nfl-teams{
-		a[href*="#{map-get($team, abbr)}"]{
-			&::before{
-				background-image: url(../img/nfl-logos-160x160.png);
-				background-position: 0 $pos-100;
-			}
+			$pos-100: $pos-100 - 100%;
 		}
-		$pos-100: $pos-100 - 100%;
+		$pos-100:  0%;
+		@each $team in $nfl-teams{
+			a[href*="#{map-get($team, abbr)}"]{
+				&::before{
+					background-image: url(../img/nfl-logos-160x160.png);
+					background-position: 0 $pos-100;
+				}
+			}
+			$pos-100: $pos-100 - 100%;
+		}
 	}
 }
