@@ -13,10 +13,10 @@
 @import "modules/flair-selection-index";
 
 // states
-
+@import "states/res";
 
 // Themes
-@import "./themes/basic-hero.scss";
+@import "themes/basic-hero";
 
 // yeah, no reddit new button
 #sr-header-area div.redesign-beta-optin{
