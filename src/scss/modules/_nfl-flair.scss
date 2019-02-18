@@ -11,7 +11,7 @@
 	width: 20px;
 	margin-right: 4px;
 	vertical-align: middle;
-	background-image: url(../img/nfl-logos-160x160.png);
+	background-image: url(#{$nfl-icons});
 	background-repeat: repeat;
 	background-size: 100%;
 }

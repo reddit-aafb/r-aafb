@@ -50,7 +50,7 @@
 		}
 		a::before{
 			content: "";
-			background-image: url(../img/logos-160x160.png);
+			background-image: url(#{$aaf-icons});
 			background-size: 100%;
 			display: block;
 			width: 100px !important;
@@ -63,7 +63,7 @@
 			transform: scale(1.05);
 		}
 		a[href*="nfl"]::before{
-			background-image: url(../img/nfl-logos-160x160.png);
+			background-image: url(#{$nfl-icons});
 		}
 
 		// Gets background position for all teams for flair, link images, and abbr images.
