@@ -17,11 +17,9 @@
 
 // states
 @import "states/res";
-@import "states/nightmode";
-
 
 // Themes
-@import "./themes/basic-hero.scss";
+@import "themes/basic-hero";
 
 // yeah, no reddit new button
 #sr-header-area div.redesign-beta-optin{
