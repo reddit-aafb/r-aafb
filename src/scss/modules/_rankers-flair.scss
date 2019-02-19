@@ -1,4 +1,4 @@
-.linkflair-purple span.flair-ranker{
+.post-linkflair-power-rankers span.flair-ranker{
 	&{
 		height: 44px;
 		width: 44px;
@@ -10,6 +10,9 @@
 		height: 40px;
 		width: 40px;
 		margin-right: 0 !important;
+	}
+	&::after{
+		display: none !important;
 	}
 	+ .author{
 		color: red;

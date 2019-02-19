@@ -2,7 +2,9 @@
 
 // variables
 @import "variables/image-map";
+@import "variables/aaf-teams";
 @import "variables/nfl-teams";
+@import "variables/link-flair";
 
 // theme controller
 @import "controls";
@@ -10,11 +12,16 @@
 // base theme
 @import "r-aafb-base-theme/theme/index";
 
-// modules
-@import "modules/teams-header";
+// essential modules
+@import "modules/aaf-flair";
 @import "modules/nfl-flair";
-@import "modules/rankers-flair";
+@import "modules/link-flair";
+@import "modules/teams-header";
+
+// modules
 @import "modules/flair-selection-index";
+@import "modules/game-thread";
+@import "modules/rankers-flair";
 
 // states
 @import "states/res";

@@ -29,7 +29,7 @@ span[class*='flair-nfl-']{
 $pos-100:  0%;
 @each $team in $nfl-teams{
 	$thisName: map-get($team, name);
-	.flair-nfl-#{$thisName}:not(.flair-ranker)::after{
+	.flair-nfl-#{$thisName}::after{
 		display: inline-block !important;
 		background-position: 0 $pos-100;
 	}
