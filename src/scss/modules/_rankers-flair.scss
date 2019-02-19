@@ -1,0 +1,23 @@
+span.flair-ranker{
+	&{
+		height: 44px;
+		width: 44px;
+	}
+	&:hover{
+		width: auto !important;
+	}
+	&::before{
+		height: 40px;
+		width: 40px;
+		margin-right: 0 !important;
+	}
+	+ .author{
+		color: red;
+	}
+	@each $team in $aaf-teams{
+		$thisName: map-get($team, name);
+		&-#{to-lower-case($thisName)} + .author::after{
+			content: " - #{$thisName} Ranker"
+		}
+	}
+}
