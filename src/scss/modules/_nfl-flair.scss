@@ -15,18 +15,21 @@
 	background-repeat: repeat;
 	background-size: 100%;
 }
+.flair-nfl{
+}
+span[class*='flair-nfl-']{
+	&{
+		width: 54px;
+	}
+	&::before{
+		margin-right: 28px;
+	}
+}
 
 $pos-100:  0%;
 @each $team in $nfl-teams{
 	$thisName: map-get($team, name);
-
-	.flair-nfl-#{$thisName}{
-		width: 54px;
-	}
-	.flair-nfl-#{$thisName}::before{
-		margin-right: 28px;
-	}
-	.flair-nfl-#{$thisName}::after{
+	.flair-nfl-#{$thisName}:not(.flair-ranker)::after{
 		display: inline-block !important;
 		background-position: 0 $pos-100;
 	}
