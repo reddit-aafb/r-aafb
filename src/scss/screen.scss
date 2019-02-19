@@ -13,13 +13,14 @@
 // modules
 @import "modules/teams-header";
 @import "modules/nfl-flair";
+@import "modules/rankers-flair";
 @import "modules/flair-selection-index";
 
 // states
 @import "states/res";
 
 // Themes
-@import "themes/basic-hero";
+//@import "themes/basic-hero";
 
 // yeah, no reddit new button
 #sr-header-area div.redesign-beta-optin{
