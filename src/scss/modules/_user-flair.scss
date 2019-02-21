@@ -12,6 +12,7 @@ body.moderator #siteTable .flair{
 // Flair wrapping element
 .flair{
 	&{
+		position: relative;
 		display: inline-block;
 		height: 24px;
 		width: 28px;
@@ -35,9 +36,9 @@ body.moderator #siteTable .flair{
 		cursor: help;
 	}
 	// Flair logo element
-	&:before{
+	&::before,
+	&::after{
 		content: "";
-		display: inline-block;
 		height: 20px;
 		width: 20px;
 		margin-right: 4px;
@@ -45,6 +46,27 @@ body.moderator #siteTable .flair{
 		background-image: url(#{$aaf-icons});
 		background-repeat: repeat;
 		background-size: 100%;
+	}
+	&::before{
+		display: inline-block;
+	}
+	&::after{
+		position: absolute;
+		top: 0;
+		left: 28px;
+		display: none;
+	}
+}
+span[class*='flair-nfl-'],
+span[class*='flair-cfl-']{
+	&{
+		width: 54px;
+	}
+	&::before{
+		margin-right: 28px;
+	}
+	&::after{
+		display: block;
 	}
 }
 // Official Flair
@@ -92,49 +114,53 @@ body.moderator #siteTable .flair{
 
 
 $pos-100:  0%;
-@each $team in $aaf-teams{
-	$thisName: map-get($team, name);
-	$thisAbbr: map-get($team, abbr);
-	$thisUrl: map-get($team, url);
-	$thisBg: map-get($team, bg);
-	$thisFg: map-get($team, fg);
-	$thisEliminated: map-get($team, eliminated);
+@each $team in $all-teams{
+	$league: map-get($team, league);
+	$name: map-get($team, name);
+	$abbr: map-get($team, abbr);
+	$url: map-get($team, url);
+	$status_eliminated: map-get($team, eliminated);
+	$status_champion: map-get($team, eliminated);
 
-	.md a[href*="/r/#{$thisUrl}"]::before,
-	.md a[href*="/#{$thisAbbr}"]::before{
-		@extend %team-link;
-	}
-
-	.flair-#{$thisName}::before,
-	.flair-#{to-lower-case($thisName)}::before,
-	.md a[href*="/r/#{$thisUrl}"]::before,
-	.md a[href*="/#{$thisAbbr}"]::before,
-	.md a[href*="/#{to-upper-case(#{$thisUrl})}"]::before,
-	.md a[href*="/#{to-upper-case(#{$thisAbbr})}"]::before{
-		background-position: 0 $pos-100;
-		@if $thisEliminated {
-			opacity: .4;
+	@if($league == "aaf"){
+		.md a[href*="/r/#{$url}"]::before,
+		.md a[href*="/r/#{to-lower-case($url)}"]::before,
+		.md a[href*="/r/#{to-upper-case($url)}"]::before,
+		.md a[href*="/#{to-lower-case($abbr)}"]::before,
+		.md a[href*="/#{to-upper-case($abbr)}"]::before{
+			@extend %team-link;
 		}
-	}
-	.side .flair-#{$thisName}::after,
-	.side a[href*="/r/#{$thisUrl}"]::after,
-	.side a[href*="/#{$thisAbbr}"]::after,
-	.side a[href*="/#{to-upper-case(#{$thisUrl})}"]::after,
-	.side a[href*="/#{to-upper-case(#{$thisAbbr})}"]::after{
-		background: $thisBg;
-	}
-	.flair-#{$thisName}.flair-official {
-		&:before{
+
+
+
+		.md a[href*="/r/#{$url}"]::before,
+		.md a[href*="/r/#{to-lower-case($url)}"]::before,
+		.md a[href*="/r/#{to-upper-case($url)}"]::before,
+		.md a[href*="/#{to-lower-case($abbr)}"]::before,
+		.md a[href*="/#{to-upper-case($abbr)}"]::before,
+		.flair-#{to-lower-case($name)}::before{
+			background-position: 0 $pos-100;
+			@if $status_eliminated{
+				opacity: .4;
+			}
+			@if $status_champion{
+				// multiple css backgrounds to be added at a later time
+			}
+		}
+	} @else{
+		.flair-#{to-lower-case($league)}-#{to-lower-case($name)}::after{
 			background-position: 0 $pos-100;
 		}
-		+ .author{
-			color: $thisFg !important;
-			background: $thisBg;
+	}
+
+
+	a[href*="/wiki/flair/aaf/#{to-lower-case($name)}"],
+	a[href*="#{$league}%3A#{to-upper-case($abbr)}"]{
+		&::before{
+			background-position: 0 $pos-100;
 		}
 	}
-	.titlebox .tagline .flairselector .flair-#{$thisName}::before{
-		background-position: 0 $pos-100;
-	}
+
 	$pos-100: $pos-100 - 100%;
 }
 

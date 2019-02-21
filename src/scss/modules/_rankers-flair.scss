@@ -1,7 +1,7 @@
 .post-linkflair-power-rankers span.flair-ranker{
 	&{
 		height: 44px;
-		width: 44px;
+		width: 44px !important;
 	}
 	&:hover{
 		width: auto !important;
@@ -18,9 +18,9 @@
 		color: red;
 	}
 	@each $team in $aaf-teams{
-		$thisName: map-get($team, name);
-		&-#{to-lower-case($thisName)} + .author::after{
-			content: " - #{$thisName} Ranker"
+		$name: map-get($team, name);
+		&.flair-#{to-lower-case($name)} + .author::after{
+			content: " - #{$name} Ranker"
 		}
 	}
 }

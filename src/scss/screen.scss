@@ -1,10 +1,14 @@
-/* Aurelian by r/nfl */
+// functions
+@import "functions/collect-maps";
 
 // variables
 @import "variables/image-map";
-@import "variables/aaf-teams";
-@import "variables/nfl-teams";
+@import "variables/teams-aaf";
+@import "variables/teams-cfl";
+@import "variables/teams-nfl";
 @import "variables/link-flair";
+
+$all-teams: map-collect($aaf-teams, $cfl-teams, $nfl-teams);
 
 // theme controller
 @import "controls";
@@ -13,15 +17,15 @@
 @import "r-aafb-base-theme/theme/index";
 
 // essential modules
-@import "modules/aaf-flair";
-@import "modules/nfl-flair";
+@import "modules/user-flair";
+@import "modules/rankers-flair";
+@import "modules/official-flair";
 @import "modules/link-flair";
 @import "modules/teams-header";
 
 // modules
 @import "modules/flair-selection-index";
 @import "modules/game-thread";
-@import "modules/rankers-flair";
 
 // states
 @import "states/res";
