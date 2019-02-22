@@ -10,11 +10,22 @@ body.moderator #siteTable .flair{
 }
 // User flair
 // Flair wrapping element
+%flair-element{
+	content: "";
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin-right: 4px;
+	vertical-align: middle;
+	background-image: url(#{$team-icons});
+	background-repeat: repeat;
+	background-size: 100%;
+}
 .flair{
 	&{
 		position: relative;
 		display: inline-block;
-		height: 24px;
+		height: 29px;
 		width: 28px;
 		padding: 1px 4px;
 		margin-right: 3px;
@@ -38,22 +49,16 @@ body.moderator #siteTable .flair{
 	// Flair logo element
 	&::before,
 	&::after{
-		content: "";
-		height: 20px;
-		width: 20px;
-		margin-right: 4px;
-		vertical-align: middle;
-		background-image: url(#{$team-icons});
-		background-repeat: repeat;
-		background-size: 100%;
+		@extend %flair-element;
 	}
 	&::before{
 		display: inline-block;
 	}
 	&::after{
 		position: absolute;
-		top: 0;
-		left: 28px;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 33px;
 		display: none;
 	}
 }
@@ -100,18 +105,6 @@ span[class*='flair-cfl-']{
 	display: inline-block !important;
 }
 
-// Link logos
-%team-link{
-	content: "";
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-	margin: 0 4px 0 0;
-	vertical-align: middle;
-	background-image: url(#{$team-icons});
-	background-size: 100%;
-}
-
 
 $pos-100:  0%;
 @each $team in $all-teams{
@@ -119,37 +112,54 @@ $pos-100:  0%;
 	$name: map-get($team, name);
 	$abbr: map-get($team, abbr);
 	$url: map-get($team, url);
+	$bg: map-get($team, bg);
 	$status_eliminated: map-get($team, eliminated);
 	$status_champion: map-get($team, eliminated);
 	$flair-rank: null;
 
 	@if($league == "aaf"){
-		$flair-rank: "primary";
-		.md a[href*="/r/#{$url}"]::before,
-		.md a[href*="/r/#{to-lower-case($url)}"]::before,
-		.md a[href*="/r/#{to-upper-case($url)}"]::before,
-		.md a[href*="/#{to-lower-case($abbr)}"]::before,
-		.md a[href*="/#{to-upper-case($abbr)}"]::before{
-			@extend %team-link;
-		}
+
 
 		.md a[href*="/r/#{$url}"]::before,
 		.md a[href*="/r/#{to-lower-case($url)}"]::before,
 		.md a[href*="/r/#{to-upper-case($url)}"]::before,
 		.md a[href*="/#{to-lower-case($abbr)}"]::before,
-		.md a[href*="/#{to-upper-case($abbr)}"]::before,
-		.flair-#{to-lower-case($name)}::before{
-			background-position: 0 $pos-100;
-			@if $status_eliminated{
-				opacity: .4;
+		.md a[href*="/#{to-upper-case($abbr)}"]::before{
+			@extend %flair-element;
+		}
+
+		.md a[href*="/r/#{$url}"],
+		.md a[href*="/r/#{to-lower-case($url)}"],
+		.md a[href*="/r/#{to-upper-case($url)}"],
+		.md a[href*="/#{to-lower-case($abbr)}"],
+		.md a[href*="/#{to-upper-case($abbr)}"],
+		.flair-#{to-lower-case($name)}{
+			&::before{
+				background-position: 0 $pos-100;
+				@if $status_eliminated{
+					opacity: .4;
+				}
+				@if $status_champion{
+					// multiple css backgrounds to be added at a later time
+				}
 			}
-			@if $status_champion{
-				// multiple css backgrounds to be added at a later time
+		}
+		.flair-#{to-lower-case($name)}{
+			&::before{
+				width: 25px;
+				height: 25px;
 			}
+			&::after{
+				width: 15px;
+				height: 15px;
+			}
+		}
+		.md a[href*="/r/#{$url}"]::after{
+			background: $bg;
 		}
 	} @else{
 		$flair-rank: "secondary";
-		.flair-#{to-lower-case($league)}-#{to-lower-case($name)}::after{
+		.flair-#{to-lower-case($league)}-#{to-upper-case($abbr)}::after{
 			background-position: 0 $pos-100;
 		}
 	}
