@@ -1,13 +1,4 @@
-.wiki-page-flair-aaf,
-.wiki-page-flair-aaf-apollos,
-.wiki-page-flair-aaf-hotshots,
-.wiki-page-flair-aaf-legends,
-.wiki-page-flair-aaf-iron,
-.wiki-page-flair-aaf-express,
-.wiki-page-flair-aaf-stallions,
-.wiki-page-flair-aaf-commanders,
-.wiki-page-flair-aaf-fleet,
-.wiki-page-flair-aaf-logo{
+body[class*="wiki-page-flair-aaf"]{
 	&{}
 	.toc,
 	.wikititle,
@@ -50,7 +41,7 @@
 		}
 		a::before{
 			content: "";
-			background-image: url(#{$aaf-icons});
+			background-image: url(#{$team-icons--large});
 			background-size: 100%;
 			display: block;
 			width: 100px !important;

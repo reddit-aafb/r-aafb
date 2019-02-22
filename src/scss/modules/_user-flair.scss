@@ -43,7 +43,7 @@ body.moderator #siteTable .flair{
 		width: 20px;
 		margin-right: 4px;
 		vertical-align: middle;
-		background-image: url(#{$aaf-icons});
+		background-image: url(#{$team-icons});
 		background-repeat: repeat;
 		background-size: 100%;
 	}
@@ -108,7 +108,7 @@ span[class*='flair-cfl-']{
 	width: 20px;
 	margin: 0 4px 0 0;
 	vertical-align: middle;
-	background-image: url(#{$aaf-icons});
+	background-image: url(#{$team-icons});
 	background-size: 100%;
 }
 
@@ -121,8 +121,10 @@ $pos-100:  0%;
 	$url: map-get($team, url);
 	$status_eliminated: map-get($team, eliminated);
 	$status_champion: map-get($team, eliminated);
+	$flair-rank: null;
 
 	@if($league == "aaf"){
+		$flair-rank: "primary";
 		.md a[href*="/r/#{$url}"]::before,
 		.md a[href*="/r/#{to-lower-case($url)}"]::before,
 		.md a[href*="/r/#{to-upper-case($url)}"]::before,
@@ -130,8 +132,6 @@ $pos-100:  0%;
 		.md a[href*="/#{to-upper-case($abbr)}"]::before{
 			@extend %team-link;
 		}
-
-
 
 		.md a[href*="/r/#{$url}"]::before,
 		.md a[href*="/r/#{to-lower-case($url)}"]::before,
@@ -148,16 +148,16 @@ $pos-100:  0%;
 			}
 		}
 	} @else{
+		$flair-rank: "secondary";
 		.flair-#{to-lower-case($league)}-#{to-lower-case($name)}::after{
 			background-position: 0 $pos-100;
 		}
 	}
 
-
 	a[href*="/wiki/flair/aaf/#{to-lower-case($name)}"],
-	a[href*="#{$league}%3A#{to-upper-case($abbr)}"]{
+	a[href*="#{$flair-rank}%3A#{to-lower-case($league)}-#{to-upper-case($abbr)}"]{
 		&::before{
-			background-position: 0 $pos-100;
+			background-position: 0 $pos-100 !important;
 		}
 	}
 
