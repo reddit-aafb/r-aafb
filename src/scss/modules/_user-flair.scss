@@ -53,12 +53,16 @@ body.moderator #siteTable .flair{
 	}
 	&::before{
 		display: inline-block;
+		width: 25px;
+		height: 25px;
 	}
 	&::after{
 		position: absolute;
 		top: 50%;
-		transform: translateY(-50%);
 		left: 33px;
+		transform: translateY(-50%);
+		width: 15px;
+		height: 15px;
 		display: none;
 	}
 }
@@ -142,16 +146,6 @@ $pos-100:  0%;
 				@if $status_champion{
 					// multiple css backgrounds to be added at a later time
 				}
-			}
-		}
-		.flair-#{to-lower-case($name)}{
-			&::before{
-				width: 25px;
-				height: 25px;
-			}
-			&::after{
-				width: 15px;
-				height: 15px;
 			}
 		}
 		.md a[href*="/r/#{$url}"]::after{
