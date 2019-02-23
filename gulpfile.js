@@ -19,7 +19,7 @@ var pcss_base_64 = require('postcss-base64');
 var pcss_media_query_packer = require('css-mqpacker');
 
 var post_process = [
-	autoprefixer({browsers: ['last 60 version']}),
+	autoprefixer({browsers: ['last 3 versions']}),
 	pcss_size(),
 	pcss_base_64(),
 	pcss_base_64(),
@@ -117,20 +117,21 @@ gulp.task('build:css', function(){
 	return gulp.src(task_info.src)
 		.pipe(plumber({errorHandler: errorAlert}))
 		.pipe(sass({
-			outputStyle: 'compressed',
+			outputStyle: 'expanded',
 			noCache: true,
 			includePaths: [
 				"./node_modules",
 				file_paths.src.modules
 			]
 		}))
+		.pipe(postcss(post_process))
 		.pipe(csso())
 		.pipe(replace("../img/", "%%"))
 		.pipe(replace(".jpg", "%%"))
 		.pipe(replace(".png", "%%"))
-		.pipe(postcss(post_process))
 		.pipe(replace("-webkit-box-align:center;", ""))
 		.pipe(replace("-moz-box-align:center;", ""))
+		.pipe(replace("-webkit-gradient(", "linear-gradient("))
 		.pipe(gulp.dest(task_info.dist));
 });
 
