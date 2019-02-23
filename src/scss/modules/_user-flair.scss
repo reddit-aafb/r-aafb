@@ -159,7 +159,7 @@ $pos-100:  0%;
 		}
 	} @else{
 		$flair-rank: "secondary";
-		.flair-#{to-lower-case($league)}-#{to-upper-case($abbr)}::after{
+		.flair-#{to-lower-case($league)}-#{to-lower-case($name)}::after{
 			background-position: 0 $pos-100;
 		}
 	}

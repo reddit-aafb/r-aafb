@@ -13,9 +13,12 @@
 		}
 	}
 
+	p{
+		overflow: hidden;
+	}
+
 	// first section
 	div div.expando hr + p{
-		overflow: hidden;
 		position: relative;
 	}
 	a[href$="#away"]{
