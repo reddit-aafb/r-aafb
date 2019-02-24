@@ -1,5 +1,7 @@
-$color-1: #E43746;
-$color-2: #F3973E;
+$color-1: #000000;
+$color-2: #51207B;
+// $color-1: #DF1C3C
+// $color-2: #C1C6C9
 
 html{
 	background-color: $color-1;
@@ -13,7 +15,8 @@ html::after{
 	width: 100%;
 	margin-top: 80px;
 	background-color: transparent;
-	background-image: url("../img/header-week-3-orl.png");
+	background-image: url("../img/header-week-3-atl.png");
+//	background-image: url("../img/header-week-3-sd.png");
 	background-position: center top;
 	background-repeat: no-repeat;
 }
