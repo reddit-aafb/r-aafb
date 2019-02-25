@@ -1,14 +1,14 @@
-$headerHeight: 240px; //ex: 20px or false
+$headerHeight: 40px; //ex: 20px or false
 $headerSideOffset: $headerHeight - 40px; //ex: 20px or false
 
 // New Promo
 $promos: (
-//     (
-//	 	image: "../img/SB-AD-Bortles.png",
-//	 	target: "SB_AD_Bortles",
-//	 	height: 300px,
-//	 	position: true
-//     ),
+    (
+	 	image: "../img/ama-schult.jpg",
+	 	target: "ama-schult",
+	 	height: 264px,
+	 	position: true
+    ),
 );
 
 // Sidebar Variables

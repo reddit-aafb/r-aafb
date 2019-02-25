@@ -22,10 +22,17 @@
 		display: none;
 	}
 }
+.thumbnail{
+	width: 50px;
+	height: 50px;
+}
 .self .thumbnail{
 	background-position: 0 (-100% * 11);
 }
-
+// stickied flair
+.stickied .title{
+	font-weight: bold !important;
+}
 
 $pos-100:  0%;
 @each $item in $link-flair{
@@ -40,12 +47,17 @@ $pos-100:  0%;
 					color: $color !important;
 				}
 				@if($bold){
-					font-weight: bold;
+					font-weight: bold !important;
 				}
 			}
 		}
 		.thumbnail{
-			background-position: 0 $pos-100;
+			&{
+				background-position: 0 $pos-100;
+			}
+			img{
+				display: none;
+			}
 		}
 	}
 
