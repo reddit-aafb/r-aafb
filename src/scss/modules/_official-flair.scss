@@ -16,10 +16,9 @@
 	&::after{
 		display: none !important;
 	}
-	+ .author {
+	+ a.author {
 		&{
-			color: white;
-			background: black;
+			color: #fff !important;
 			border-radius:4px;
 			-moz-border-radius:4px;
 			-webkit-border-radius:4px;
