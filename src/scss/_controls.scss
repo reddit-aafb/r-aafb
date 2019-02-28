@@ -3,19 +3,19 @@ $headerSideOffset: $headerHeight - 40px; //ex: 20px or false
 
 // New Promo
 $promos: (
-    (
-	 	image: "../img/ama-schult.jpg",
-	 	target: "ama-schult",
-	 	height: 264px,
-	 	position: true
-    ),
+    //(
+	// 	image: "../img/ama-schult.jpg",
+	// 	target: "ama-schult",
+	// 	height: 264px,
+	// 	position: true
+    //),
 );
 
 // Sidebar Variables
-$sidebarImage: "../img/SB-week-one.jpg";
-$sidebarHeader: "Let the Games Begin";
-$sidebarText: "With a delightfully fast, competitive, and fun opening weekend, the AAF has broken onto the scene as a league that isn't afraid of what it is or brings to the table. Despite being a lower league, the entertainment of the AAF was top of the line and can stand against any other product out there. And this is only after five weeks of playing together. Be excited.";
-$sidebarPicHeight: 244px;
+$sidebarImage: "../img/SB-week-three.jpg";
+$sidebarHeader: "One for the Record Books";
+$sidebarText: "In week 3, Ja'Quan Gardner set the AAF record for longest scoring play, breaking free for an 83-yard touchdown run early in the 3rd quarter. Overall, he rushed 12 times for 122 yards, helping his San Diego Fleet (2-1) sail into a 1st place tie in the West.";
+$sidebarPicHeight: 252px;
 $sidebarPicOffset: 0;
 
 // Links in sidebar
