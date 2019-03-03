@@ -3,12 +3,12 @@ $headerSideOffset: $headerHeight - 20px; //ex: 20px or false
 
 // New Promo
 $promos: (
-    //(
-	// 	image: "../img/ama-schult.jpg",
-	// 	target: "ama-schult",
-	// 	height: 264px,
-	// 	position: true
-    //),
+    (
+	 	image: "../img/ama-shipyard.jpg",
+	 	target: "ama-shipyard",
+	 	height: 264px,
+	 	position: true
+    ),
 );
 
 // Sidebar Variables
