@@ -6,6 +6,7 @@ var fileinclude = require('gulp-file-include');
 var replace = require('gulp-replace');
 var include = require('gulp-file-include');
 var csso = require('gulp-csso');
+var clipboard = require("gulp-clipboard");
 
 // assets
 
@@ -132,6 +133,8 @@ gulp.task('build:css', function(){
 		.pipe(replace("-webkit-box-align:center;", ""))
 		.pipe(replace("-moz-box-align:center;", ""))
 		.pipe(replace("-webkit-gradient(", "linear-gradient("))
+		.pipe(gulp.src("./dist/assets/css/screen.css"))
+		.pipe(clipboard())
 		.pipe(gulp.dest(task_info.dist));
 });
 
