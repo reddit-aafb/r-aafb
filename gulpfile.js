@@ -162,3 +162,12 @@ gulp.task('default', ['build'], function() {
 	gulp.watch(get_file_paths("css").watch, [ 'build:css' ]);
 	gulp.watch(get_file_paths("assets").watch, [ 'build:assets' ]);
 });
+
+// fail when things fail... is javascript to blame for this idiocy, or heroin?
+gulp.on('err', function (err) {
+    process.emit('exit')
+})
+
+process.on('exit', function () {
+    process.exit(1)
+})
