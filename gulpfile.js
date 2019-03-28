@@ -1,4 +1,6 @@
 // global
+var exitCode = 0;
+
 var gulp = require('gulp');
 var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
@@ -151,6 +153,7 @@ gulp.task('build:html', function(){
 function errorAlert(error){
 	notify.onError({title: 'Gulp Error', message: 'Check your terminal', sound: 'Sosumi'})(error);
 	console.log(error.toString());
+	exitCode = 1;
 	this.emit('end');
 };
 
@@ -165,9 +168,9 @@ gulp.task('default', ['build'], function() {
 
 // fail when things fail... is javascript to blame for this idiocy, or heroin?
 gulp.on('err', function (err) {
-    process.emit('exit')
+	process.emit('exit')
 })
 
 process.on('exit', function () {
-    process.exit(1)
+	process.exit(exitCode)
 })
