@@ -121,9 +121,6 @@ $pos-100:  0%;
 				}
 			}
 		}
-		.md a[href*="/r/#{$url}"]::after{
-			background: $bg;
-		}
 		.flair-#{to-lower-case($name)}.flair-official + .author {
 			background: $bg;
 			color: $fg;

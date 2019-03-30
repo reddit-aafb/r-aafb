@@ -131,4 +131,14 @@
 	a:last-child::after{
 		right: -20px;
 	}
+
+	@each $team in $all-teams {
+		$league: map-get($team, league);
+		$bg: map-get($team, bg);
+		@if($league == "aaf") {
+			& a[href*="/r/#{$url}"]::after{
+				background: $bg;
+			}
+		}
+	}
 }
