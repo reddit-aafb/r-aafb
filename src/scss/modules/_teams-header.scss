@@ -134,6 +134,7 @@
 
 	@each $team in $all-teams {
 		$league: map-get($team, league);
+		$url: map-get($team, url);
 		$bg: map-get($team, bg);
 		@if($league == "aaf") {
 			& a[href*="/r/#{$url}"]::after{
