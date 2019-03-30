@@ -91,6 +91,7 @@ $pos-100:  0%;
 	$abbr: map-get($team, abbr);
 	$url: map-get($team, url);
 	$bg: map-get($team, bg);
+	$fg: map-get($team, fg);
 	$status_eliminated: map-get($team, eliminated);
 	$status_champion: map-get($team, eliminated);
 	$flair-rank: null;
@@ -125,6 +126,7 @@ $pos-100:  0%;
 		}
 		.flair-#{to-lower-case($name)}.flair-official + .author {
 			background: $bg;
+			color: $fg;
 		}
 	} @else{
 		$flair-rank: "secondary";
