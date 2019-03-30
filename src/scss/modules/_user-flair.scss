@@ -25,9 +25,8 @@ body.moderator #siteTable .flair{
 	&{
 		position: relative;
 		display: inline-block;
-		height: 29px;
+		height: 28px;
 		width: 28px;
-		padding: 1px 4px;
 		margin-right: 3px;
 		vertical-align: middle;
 		font-size: 10px;
@@ -59,7 +58,7 @@ body.moderator #siteTable .flair{
 	&::after{
 		position: absolute;
 		top: 50%;
-		left: 33px;
+		left: 30px;
 		transform: translateY(-50%);
 		width: 15px;
 		height: 15px;
