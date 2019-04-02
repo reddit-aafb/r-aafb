@@ -25,9 +25,8 @@ body.moderator #siteTable .flair{
 	&{
 		position: relative;
 		display: inline-block;
-		height: 29px;
+		height: 28px;
 		width: 28px;
-		padding: 1px 4px;
 		margin-right: 3px;
 		vertical-align: middle;
 		font-size: 10px;
@@ -59,7 +58,7 @@ body.moderator #siteTable .flair{
 	&::after{
 		position: absolute;
 		top: 50%;
-		left: 33px;
+		left: 30px;
 		transform: translateY(-50%);
 		width: 15px;
 		height: 15px;
@@ -91,24 +90,36 @@ $pos-100:  0%;
 	$abbr: map-get($team, abbr);
 	$url: map-get($team, url);
 	$bg: map-get($team, bg);
+	$fg: map-get($team, fg);
 	$status_eliminated: map-get($team, eliminated);
 	$status_champion: map-get($team, eliminated);
 	$flair-rank: null;
 
 	@if($league == "aaf"){
-		.md a[href*="/r/#{$url}"]::before,
-		.md a[href*="/r/#{to-lower-case($url)}"]::before,
-		.md a[href*="/r/#{to-upper-case($url)}"]::before,
-		.md a[href*="/#{to-lower-case($abbr)}"]::before,
-		.md a[href*="/#{to-upper-case($abbr)}"]::before{
+		.md a[href$="/r/#{$url}"]::before,
+		.md a[href^="/r/#{$url}#"]::before,
+		.md a[href$="/r/#{to-lower-case($url)}"]::before,
+		.md a[href="/#{to-lower-case($abbr)}"]::before,
+		.md a[href="/#{to-upper-case($abbr)}"]::before,
+		.md a[data-href-url$="/r/#{$url}"]::before,
+		.md a[data-href-url^="/r/#{$url}#"]::before,
+		.md a[data-href-url$="/r/#{to-lower-case($url)}"]::before,
+		.md a[data-href-url="/#{to-lower-case($abbr)}"]::before,
+		.md a[data-href-url="/#{to-upper-case($abbr)}"]::before
+		{
 			@extend %flair-element;
 		}
 
-		.md a[href*="/r/#{$url}"],
-		.md a[href*="/r/#{to-lower-case($url)}"],
-		.md a[href*="/r/#{to-upper-case($url)}"],
-		.md a[href*="/#{to-lower-case($abbr)}"],
-		.md a[href*="/#{to-upper-case($abbr)}"],
+		.md a[href$="/r/#{$url}"],
+		.md a[href^="/r/#{$url}#"],
+		.md a[href$="/r/#{to-lower-case($url)}"],
+		.md a[href="/#{to-lower-case($abbr)}"],
+		.md a[href="/#{to-upper-case($abbr)}"],
+		.md a[data-href-url$="/r/#{$url}"],
+		.md a[data-href-url^="/r/#{$url}#"],
+		.md a[data-href-url$="/r/#{to-lower-case($url)}"],
+		.md a[data-href-url="/#{to-lower-case($abbr)}"],
+		.md a[data-href-url="/#{to-upper-case($abbr)}"],
 		.flair-#{to-lower-case($name)}{
 			&::before{
 				background-position: 0 $pos-100;
@@ -120,11 +131,9 @@ $pos-100:  0%;
 				}
 			}
 		}
-		.md a[href*="/r/#{$url}"]::after{
-			background: $bg;
-		}
 		.flair-#{to-lower-case($name)}.flair-official + .author {
 			background: $bg;
+			color: $fg;
 		}
 	} @else{
 		$flair-rank: "secondary";
@@ -154,5 +163,5 @@ $pos-100:  0%;
 	background-position: 0 0;
 }
 .flair-robot:before {
-	background-position: 0 -20px;
+	background-position: 0 -25px;
 }

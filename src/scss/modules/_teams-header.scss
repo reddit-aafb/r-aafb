@@ -131,4 +131,12 @@
 	a:last-child::after{
 		right: -20px;
 	}
+
+	@each $team in $aaf-teams {
+		$url: map-get($team, url);
+		$bg: map-get($team, bg);
+		& a[href="/r/#{$url}"]::after, a[data-href-url="/r/#{$url}"]{
+			background: $bg;
+		}
+	}
 }
