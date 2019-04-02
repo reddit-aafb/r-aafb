@@ -1,7 +1,7 @@
 $link-flair: (
 	name: "game thread",
 	class: "game-thread",
-	color: #429876,
+	color: grayscale(#429876),
 	bold: true,
 ),(
 	name: "highlight",
@@ -15,7 +15,7 @@ $link-flair: (
 ),(
 	name: "trash talk",
 	class: "trash-talk",
-	color: #81CEDF,
+	color: grayscale(#81CEDF),
 ),(
 	name: "original content",
 	class: "original-content",
@@ -25,7 +25,7 @@ $link-flair: (
 ),(
 	name: "Announcement",
 	class: "announcement",
-	color: #E74C3C,
+	color: grayscale(#E74C3C),
 	bold: true,
 ),(
 	name: "News",
@@ -45,7 +45,7 @@ $link-flair: (
 ),(
 	name: "AMA",
 	class: "ama",
-	color: #87D37C,
+	color: grayscale(#87D37C),
 	bold: true,
 ),(
 	name: "AMA Ended :(",

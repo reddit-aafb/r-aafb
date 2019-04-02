@@ -15,7 +15,7 @@
 		display: none !important;
 	}
 	+ .author{
-		color: red;
+		color: grayscale(red);
 	}
 	@each $team in $aaf-teams{
 		$name: map-get($team, name);
