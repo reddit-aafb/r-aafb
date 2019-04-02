@@ -132,14 +132,11 @@
 		right: -20px;
 	}
 
-	@each $team in $all-teams {
-		$league: map-get($team, league);
+	@each $team in $aaf-teams {
 		$url: map-get($team, url);
 		$bg: map-get($team, bg);
-		@if($league == "aaf") {
-			& a[href="/r/#{$url}"]::after, a[data-href-url="/r/#{$url}"]{
-				background: $bg;
-			}
+		& a[href="/r/#{$url}"]::after, a[data-href-url="/r/#{$url}"]{
+			background: $bg;
 		}
 	}
 }
