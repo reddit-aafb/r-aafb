@@ -2,7 +2,7 @@ $color-1: #3F195F;
 $color-2: #F7B744;
 
 html{
-	background-color: $color-1;
+	background-color: grayscale($color-1);
 }
 html::after{
 	content: "";
@@ -25,7 +25,7 @@ html::before{
 	right: 0;
 	z-index: -1;
 	height: 100%;
-	background-color: $color-2;
+	background-color: grayscale($color-2);
 }
 #header{
 	background: #fff;

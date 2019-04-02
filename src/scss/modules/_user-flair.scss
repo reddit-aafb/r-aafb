@@ -132,8 +132,8 @@ $pos-100:  0%;
 			}
 		}
 		.flair-#{to-lower-case($name)}.flair-official + .author {
-			background: $bg;
-			color: $fg;
+			background: grayscale($bg);
+			color: grayscale($fg);
 		}
 	} @else{
 		$flair-rank: "secondary";

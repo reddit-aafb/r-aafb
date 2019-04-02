@@ -24,7 +24,7 @@
 		top: $h-reddit-nav;
 		height: 80px;
 		width: 200px;
-		background: $aaf-blue;
+		background: grayscale($aaf-blue);
 		z-index: 2;
 		cursor: pointer;
 		transition: .3s ease-out;
@@ -41,7 +41,7 @@
 		&::before,
 		&::after{
 			transition: 1s ease-out;
-			background: lighten($aaf-blue, 10);
+			background: grayscale(lighten($aaf-blue, 10));
 		}
 	}
 	&::before{
@@ -136,7 +136,7 @@
 		$url: map-get($team, url);
 		$bg: map-get($team, bg);
 		& a[href="/r/#{$url}"]::after, a[data-href-url="/r/#{$url}"]{
-			background: $bg;
+			background: grayscale($bg);
 		}
 	}
 }
